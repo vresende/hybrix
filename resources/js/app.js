@@ -15,7 +15,7 @@ File: Main Js File
 	 */
 	var navbarMenuHTML = document.querySelector(".navbar-menu").innerHTML;
 	var horizontalMenuSplit = 6; // after this number all horizontal menus will be moved in More menu options
-	var default_lang = "en"; // set Default Language
+	var default_lang = "pt_BR"; // set Default Language
 	var language = localStorage.getItem("language");
 
 	function initLanguage() {
@@ -28,31 +28,34 @@ File: Main Js File
             });
         });
 	}
-	
+
 	function setLanguage(lang) {
 		if (document.getElementById("header-lang-img")) {
-			if (lang == "en") {
+			if (lang === "en") {
 				document.getElementById("header-lang-img").src = "build/images/flags/us.svg";
 				document.getElementById("lang-name").innerHTML = "English"
-			} else if (lang == "sp") {
-				document.getElementById("header-lang-img").src = "build/images/flags/spain.svg";
-				document.getElementById("lang-name").innerHTML = "Española"
-			} else if (lang == "gr") {
+			}  else if (lang === "pt_BR") {
+                document.getElementById("header-lang-img").src = "build/images/flags/br.svg";
+                document.getElementById("lang-name").innerHTML = "Português"
+            } else if (lang === "sp") {
+                document.getElementById("header-lang-img").src = "build/images/flags/spain.svg";
+                document.getElementById("lang-name").innerHTML = "Española"
+            } else if (lang === "gr") {
 				document.getElementById("header-lang-img").src = "build/images/flags/germany.svg";
 				document.getElementById("lang-name").innerHTML = "Deutsche"
-			} else if (lang == "it") {
+			} else if (lang === "it") {
 				document.getElementById("header-lang-img").src = "build/images/flags/italy.svg";
 				document.getElementById("lang-name").innerHTML = "Italiana"
-			} else if (lang == "ru") {
+			} else if (lang === "ru") {
 				document.getElementById("header-lang-img").src = "build/images/flags/russia.svg";
 				document.getElementById("lang-name").innerHTML = "русский"
-			} else if (lang == "ch") {
+			} else if (lang === "ch") {
 				document.getElementById("header-lang-img").src = "build/images/flags/china.svg";
 				document.getElementById("lang-name").innerHTML = "中国人"
-			} else if (lang == "fr") {
+			} else if (lang === "fr") {
 				document.getElementById("header-lang-img").src = "build/images/flags/french.svg";
 				document.getElementById("lang-name").innerHTML = "français"
-			} else if (lang == "ar") {
+			} else if (lang === "ar") {
 				document.getElementById("header-lang-img").src = "build/images/flags/ae.svg";
 				document.getElementById("lang-name").innerHTML = "عربى"
 			}
@@ -133,8 +136,8 @@ File: Main Js File
 						y: toastData.offset ? 10 : 0, // vertical axis - can be a number or a string indicating unity. eg: '2em'
 					},
 					duration: toastData.duration,
-					close: toastData.close == "close" ? true : false,
-					style: toastData.style == "style" ? {
+					close: toastData.close === "close" ? true : false,
+					style: toastData.style === "style" ? {
 						background: "linear-gradient(to right, #0AB39C, #405189)"
 					} : "",
 				}).showToast();
@@ -377,7 +380,7 @@ File: Main Js File
 		if (defaultValues && (isTwoColumn == "twocolumn" || defaultValues["data-layout"] == "twocolumn")) {
 			if(document.querySelector(".navbar-menu")){
 			document.querySelector(".navbar-menu").innerHTML = navbarMenuHTML;
-		}	
+		}
 			var ul = document.createElement("ul");
 			ul.innerHTML = '<a href="index.html" class="logo"><img src="build/images/logo-sm.png" alt="" height="22"></a>';
 			Array.from(document.getElementById("navbar-nav").querySelectorAll(".menu-link")).forEach(function (item) {
@@ -500,7 +503,7 @@ File: Main Js File
 
 				var inputVal = searchInput.value.toLowerCase();
 				var notifyItem = document.getElementsByClassName("notify-item");
-				
+
 				Array.from(notifyItem).forEach(function (element) {
 					var notifiTxt = ''
 					if(element.querySelector("h6")){
@@ -629,7 +632,7 @@ File: Main Js File
 			document.getElementById("two-column-menu").innerHTML = "";
 			if(document.querySelector(".navbar-menu")){
 			document.querySelector(".navbar-menu").innerHTML = navbarMenuHTML;
-		}	
+		}
 			document.getElementById("scrollbar").setAttribute("data-simplebar", "");
 			document.getElementById("navbar-nav").setAttribute("data-simplebar", "");
 			document.getElementById("scrollbar").classList.add("h-100");
@@ -823,7 +826,7 @@ File: Main Js File
 		});
 		if(document.getElementById("topnav-hamburger-icon")){
 		document.getElementById("topnav-hamburger-icon").addEventListener("click", toggleHamburgerMenu);
-	}	
+	}
 		var isValues = sessionStorage.getItem("defaultAttribute");
 		var defaultValues = JSON.parse(isValues);
 		var windowSize = document.documentElement.clientWidth;
@@ -995,7 +998,7 @@ File: Main Js File
 					document.querySelectorAll(".notification-title").forEach(function(item){
 						item.style.display = "none";
 					});
-					
+
 					var emptyNotificationElem = document.querySelector("#notificationItemsTabContent .empty-notification-elem")
 					if(!emptyNotificationElem){
 						document.getElementById("notificationItemsTabContent").innerHTML += '<div class="empty-notification-elem text-center px-4">\
@@ -1005,7 +1008,7 @@ File: Main Js File
 							</div>\
 						</div>\
 						<div class="pb-3 mt-2">\
-							<h6 class="fs-16 fw-semibold lh-base">Hey! You have no any notifications </h6>\
+							<h6 class="fs-16 fw-semibold lh-base">Não há notificações no momento </h6>\
 						</div>\
 					</div>'
 					}
@@ -1015,7 +1018,7 @@ File: Main Js File
 			Array.from(document.querySelectorAll(".notification-check input")).forEach(function (element) {
 				element.addEventListener("change", function (el) {
 					el.target.closest(".notification-item").classList.toggle("active");
-				
+
 					var checkedCount = document.querySelectorAll('.notification-check input:checked').length;
 
 					if (el.target.closest(".notification-item").classList.contains("active")) {
@@ -1037,7 +1040,7 @@ File: Main Js File
 						document.getElementById('notification-actions').style.display = '';
 					});
 				}
-				
+
 			});
 
 
@@ -1540,7 +1543,7 @@ File: Main Js File
 							getElementUsingTagname("data-preloader", "disable");
 							sessionStorage.setItem("data-preloader", "disable");
 							document.documentElement.setAttribute("data-preloader", "disable");
-						
+
 						break;
 					case "enable":
 							getElementUsingTagname("data-preloader", "enable");
@@ -1559,7 +1562,7 @@ File: Main Js File
 							getElementUsingTagname("data-preloader", "disable");
 							sessionStorage.setItem("data-preloader", "disable");
 							document.documentElement.setAttribute("data-preloader", "disable");
-			
+
 						}else if (sessionStorage.getItem("data-preloader") == "enable") {
 							getElementUsingTagname("data-preloader", "enable");
 							sessionStorage.setItem("data-preloader", "enable");
@@ -1601,7 +1604,7 @@ File: Main Js File
 							sessionStorage.setItem("data-body-image", "none");
 							document.documentElement.setAttribute("data-body-image", "none");
 						break;
-						
+
 					default:
 						if (sessionStorage.getItem("data-body-image") && sessionStorage.getItem("data-body-image") == "img-1") {
 							sessionStorage.setItem("data-body-image", "img-1");
@@ -1733,7 +1736,7 @@ File: Main Js File
 				}
 			});
 		}
-		
+
 		Array.from(document.querySelectorAll("[name='data-sidebar']")).forEach(function (elem) {
 			if (document.querySelector("[data-bs-target='#collapseBgGradient']")) {
 				if (document.querySelector("#collapseBgGradient .form-check input:checked")) {
@@ -1748,7 +1751,7 @@ File: Main Js File
 					} else {
 						document.querySelector("[data-bs-target='#collapseBgGradient']").classList.remove("active");
 					}
-				})	
+				})
 			}
 		})
 
@@ -1768,9 +1771,6 @@ File: Main Js File
 			sessionStorage.setItem("defaultAttribute", JSON.stringify(isLayoutAttributes));
 			layoutSwitch(isLayoutAttributes);
 
-			// open right sidebar on first time load
-			var offCanvas = document.querySelector('.btn[data-bs-target="#theme-settings-offcanvas"]');
-			offCanvas ? offCanvas.click() : "";
 		} else {
 			var isLayoutAttributes = {};
 			isLayoutAttributes["data-layout"] = sessionStorage.getItem("data-layout");
