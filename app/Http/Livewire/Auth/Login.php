@@ -10,7 +10,7 @@ use Livewire\Features\SupportRedirects\Redirector;
 
 class Login extends Component
 {
-    public ?string $email = "admin@themesbrand.com";
+    public ?string $email = "vini_handball@hotmail.com";
     public ?string $password = "12345678";
     /**
      * @var array|string[]
@@ -41,7 +41,7 @@ class Login extends Component
 
         if (Auth::attempt($user)) {
 
-            return redirect()->intended('/index/' . config('app.locale'));
+            return redirect()->intended('/index/' . str_replace('_', '-', config('app.locale')));
         }
 
         $this->addError('email', trans('auth.failed'));

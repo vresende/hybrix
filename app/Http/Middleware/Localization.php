@@ -13,7 +13,7 @@ class Localization
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
         if (session()->has('lang')) {
             App::setLocale(session()->get('lang'));

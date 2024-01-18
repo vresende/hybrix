@@ -43,7 +43,7 @@ class HomeController extends Controller
     {
         if ($locale) {
             App::setLocale($locale);
-            Session::put('lang', $locale);
+            Session::put('lang', str_replace('-', '_', $locale));
             Session::save();
 
             return redirect()->back()->with('locale', $locale);

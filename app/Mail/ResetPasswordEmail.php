@@ -12,11 +12,11 @@ class ResetPasswordEmail extends Mailable
     use Queueable;
     use SerializesModels;
 
-    public $url;
+    public string $url;
     /**
      * Create a new message instance.
      */
-    public function __construct($url)
+    public function __construct(string $url)
     {
         $this->url = $url;
     }
@@ -27,7 +27,7 @@ class ResetPasswordEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('hybrix@no-reply.com'),
+            from: new Address('noreply@' . app()->get('domain'), 'noreply'),
             replyTo: [
                 new Address('support@hybrix.com'),
             ],
