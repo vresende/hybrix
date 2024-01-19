@@ -11,7 +11,8 @@
         "laravel/sanctum": "^v3.3",
         "laravel/tinker": "^v2.9",
         "laravel/ui": "^v4.4.0",
-        "livewire/livewire": "^v3.3"
+        "livewire/livewire": "^v3.3",
+        "realrashid/sweet-alert": "^7.1"
 
     },
     "require-dev": {
