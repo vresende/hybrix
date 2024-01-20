@@ -10,7 +10,7 @@
                 <div class="h-100 mb-0 p-4 d-flex flex-column justify-content-between">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <img src="{{ URL::asset('build/images/logo-light-full.png') }}" alt=""
+                            <img src="{{ asset('build/images/logo-light-full.png') }}" alt=""
                                 height="32" />
                         </div>
                     </div>
@@ -19,8 +19,8 @@
                         <p class="mb-0">&copy;
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Hybrix. Crafted with <i class="mdi mdi-heart text-danger"></i> by
-                            Themesbrand
+                            </script> {{ config('site.name') }}. Criado com <i class="mdi mdi-heart text-danger"></i> por
+                            {{ config('site.author') }}
                         </p>
                     </div>
                 </div>
@@ -30,8 +30,8 @@
                 <div class="card mb-0 py-5">
                     <div class="card-body p-4 p-sm-5 m-lg-2">
                         <div class="text-center mt-2">
-                            <h5 class="text-primary fs-22">Welcome Back !</h5>
-                            <p class="text-muted">Sign in to continue to Hybrix.</p>
+                            <h5 class="text-primary fs-22">Seja bem vindo !</h5>
+                            <p class="text-muted">faça o login para acessar o sistema.</p>
                         </div>
                         @if (session()->has('error'))
                             <div class="alert alert-borderless alert-danger alert-dismissible mb-2 mx-2">
@@ -56,7 +56,7 @@
                                             class="text-danger">*</span></label>
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" wire:model.live="email"
-                                        value="{{ old('email', 'admin@themesbrand.com') }}" required autocomplete="email" autofocus placeholder="Enter your email">
+                                        value="{{ old('email', 'admin@themesbrand.com') }}" required autocomplete="email" autofocus placeholder="Digite seu email">
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
                                             </a>
                                         @endif
                                     </div>
-                                    <label class="form-label" for="password-input">Password <span
+                                    <label class="form-label" for="password-input">Senha <span
                                             class="text-danger">*</span></label>
                                     <div class="position-relative auth-pass-inputgroup mb-3">
                                         <input id="password" type="password"
@@ -94,16 +94,16 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                         {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="remember">Remember me</label>
+                                    <label class="form-check-label" for="remember">Lembrar-me</label>
                                 </div>
 
                                 <div class="mt-4">
-                                    <button class="btn btn-primary w-100" type="submit">Sign In</button>
+                                    <button class="btn btn-primary w-100" type="submit">Acessar</button>
                                 </div>
 
                                 <div class="mt-4 pt-2 text-center">
                                     <div class="signin-other-title">
-                                        <h5 class="fs-13 mb-4 title">Sign In with</h5>
+                                        <h5 class="fs-13 mb-4 title">Acessar com</h5>
                                     </div>
                                     <div class="pt-2 hstack gap-2 justify-content-center">
                                         <button type="button" class="btn btn-soft-primary btn-icon"><i
@@ -118,10 +118,10 @@
                                 </div>
                             </form>
 
-                            <div class="text-center mt-5">
-                                <p class="mb-0">Don't have an account ? <a href="{{ url('register') }}"
+                            <!--<div class="text-center mt-5">
+                                <p class="mb-0">Ainda não tem nenh ? <a href="{{ url('register') }}"
                                         class="fw-semibold text-secondary text-decoration-underline"> Sign Up</a> </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- end card body -->
