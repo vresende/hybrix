@@ -22,15 +22,16 @@
                                         </div>
 
                                         <div>
-                                            <h3 class="text-white">Start your journey with us.</h3>
-                                            <p class="text-white-75 fs-15">It brings together your tasks, projects, timelines, files and more</p>
+                                            <h3 class="text-white">Comece sua jornada conosco.</h3>
+                                            <p class="text-white-75 fs-15"></p>
                                         </div>
                                         <div class="text-center text-white-75">
                                             <p class="mb-0">&copy;
                                                 <script>
                                                     document.write(new Date().getFullYear())
 
-                                                </script> Hybrix. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                                </script>
+                                                {{ config('site.name') }}. Criado com <i class="mdi mdi-heart text-danger"></i> por {{ config('site.author') }}
                                             </p>
                                         </div>
                                     </div>
