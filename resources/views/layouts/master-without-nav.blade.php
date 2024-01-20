@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title> @yield('title') | Hybrix - Laravel 10 Admin & Dashboard Template</title>
+    <title> @yield('title') | {{ config('site.name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Hybrix Laravel Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-     <meta name="keywords" content="hybrix,hybrix laravel,admin,dashboard,vite,livewire,livewire admin,laravel vite">
-     
+    <meta content="{{ config('site.description') }}" name="description" />
+    <meta content="{{ config('site.author') }}" name="author" />
+     <meta name="keywords" content="{{ config('site.keyword') }} }}">
+
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('build/images/favicon.ico') }}">
 

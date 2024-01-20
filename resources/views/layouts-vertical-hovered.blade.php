@@ -5,6 +5,6 @@
 
 @endsection
 @section('script')
-<script src="{{ URL::asset('build/js/app.js') }}"></script>
+<!--<script src="{{ URL::asset('build/js/app.js') }}"></script> -->
 @endsection
 

@@ -11,10 +11,10 @@
         "@popperjs/core": "^2.11.7",
         "axios": "^1.1.2",
         "bootstrap": "5.3.2",
+        "husky": "^8.0.0",
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
-        "vite": "^4.0.0",
-        "husky": "^8.0.0"
+        "vite": "^4.0.0"
     },
     "dependencies": {
         "browser-sync": "^2.29.1",
@@ -26,6 +26,8 @@
         "rimraf": "^5.0.5",
         "rtlcss": "^4.1.0",
         "sass-loader": "^13.2.2",
+        "sweetalert2": "^11.10.3",
+        "toastify-js": "^1.12.0",
         "vite-plugin-static-copy": "^0.14.0"
     }
 }

@@ -25,16 +25,15 @@
                                             </div>
 
                                             <div>
-                                                <h3 class="text-white">Start your journey with us.</h3>
-                                                <p class="text-white-75 fs-15">It brings together your tasks, projects,
-                                                    timelines, files and more</p>
+                                                <h3 class="text-white">Comece sua jornada conosco..</h3>
+                                                <p class="text-white-75 fs-15"></p>
                                             </div>
                                             <div class="text-center text-white-75">
                                                 <p class="mb-0">&copy;
                                                     <script>
                                                         document.write(new Date().getFullYear())
-                                                    </script> Hybrix. Crafted with <i
-                                                        class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                                    </script> {{ config('site.name') }}. Criado com
+                                                    <i class="mdi mdi-heart text-danger"></i> por {{ config('site.author') }}
                                                 </p>
                                             </div>
                                         </div>
@@ -45,8 +44,8 @@
                                     <div class="card mb-0 border-0 py-3 shadow-none">
                                         <div class="card-body px-0 p-sm-5 m-lg-4">
                                             <div class="text-center mt-2">
-                                                <h5 class="text-primary fs-20">Create New Account</h5>
-                                                <p class="text-muted">Get your free Hybrix account now</p>
+                                                <h5 class="text-primary fs-20">Criar conta</h5>
+                                                <p class="text-muted">Obtenha sua conta na {{ config('site.name') }}</p>
                                             </div>
                                             <div class="p-2 mt-5">
                                                 <form class="needs-validation" novalidate method="POST"
@@ -66,34 +65,33 @@
                                                             </span>
                                                         @enderror
                                                         <div class="invalid-feedback">
-                                                            Please enter email
+                                                           Digite seu email
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="username" class="form-label">Username <span
+                                                        <label for="username" class="form-label">Usuário <span
                                                                 class="text-danger">*</span></label>
                                                         <input type="text"
                                                             class="form-control @error('name') is-invalid @enderror"
                                                             name="name" value="{{ old('name') }}" id="username"
-                                                            placeholder="Enter username" required>
+                                                            placeholder="usuário" required>
                                                         @error('name')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span>
                                                         @enderror
                                                         <div class="invalid-feedback">
-                                                            Please enter username
+                                                            Por favor digite seu usuário
                                                         </div>
                                                     </div>
                                                     <div class="mb-2">
-                                                        <label for="password-input" class="form-label">Password <span
+                                                        <label for="password-input" class="form-label">Senha <span
                                                                 class="text-danger">*</span></label>
                                                         <div class="position-relative auth-pass-inputgroup">
                                                             <input type="password"
                                                                 class="form-control pe-5 password-input @error('password') is-invalid @enderror"
                                                                 name="password" onpaste="return false"
-                                                                placeholder="Enter password" id="password-input"
-                                                                placeholder="Enter password" required>
+                                                                placeholder="Digite a senha" id="password-input" required>
                                                             <button
                                                                 class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                                 type="button" id="password-addon"><i
@@ -107,34 +105,33 @@
                                                     </div>
 
                                                     <div class="mb-4">
-                                                        <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree
-                                                            to the Hybrix <a href="#"
-                                                                class="text-primary text-decoration-underline fst-normal fw-medium">Terms
-                                                                of Use</a></p>
+                                                        <p class="mb-0 fs-12 text-muted fst-italic">Ao se registrar você concorda com o {{ config('site.name') }}<a href="#"
+                                                                class="text-primary text-decoration-underline fst-normal fw-medium">
+                                                                Termos de uso</a></p>
                                                     </div>
 
                                                     <div id="password-contain" class="p-3 bg-light mb-2 rounded">
-                                                        <h5 class="fs-13">Password must contain:</h5>
-                                                        <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8
-                                                                characters</b></p>
-                                                        <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b>
-                                                            letter (a-z)</p>
-                                                        <p id="pass-upper" class="invalid fs-12 mb-2">At least
-                                                            <b>uppercase</b> letter (A-Z)
+                                                        <h5 class="fs-13">A senha deve conter:</h5>
+                                                        <p id="pass-length" class="invalid fs-12 mb-2">Mínimo <b>8
+                                                                carácteres</b></p>
+                                                        <p id="pass-lower" class="invalid fs-12 mb-2">Em caixa <b>baixa</b>
+                                                            (a-z)</p>
+                                                        <p id="pass-upper" class="invalid fs-12 mb-2">Em caixa
+                                                            <b>alta</b> (A-Z)
                                                         </p>
-                                                        <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b>
+                                                        <p id="pass-number" class="invalid fs-12 mb-0">Pelo menos um <b>número</b>
                                                             (0-9)</p>
                                                     </div>
 
                                                     <div class="mt-4">
-                                                        <button class="btn btn-primary w-100" type="submit">Sign
-                                                            Up</button>
+                                                        <button class="btn btn-primary w-100" type="submit">
+                                                            Inscreva-se
+                                                        </button>
                                                     </div>
 
                                                     <div class="mt-4 text-center">
                                                         <div class="signin-other-title">
-                                                            <h5 class="fs-13 mb-4 title text-muted">Create account with
-                                                            </h5>
+                                                            <h5 class="fs-13 mb-4 title text-muted">Criar conta com</h5>
                                                         </div>
 
                                                         <div>
@@ -153,9 +150,11 @@
                                                 </form>
                                             </div>
                                             <div class="mt-4 text-center">
-                                                <p class="mb-0">Already have an account ? <a href="auth-signin-basic"
-                                                        class="fw-semibold text-primary text-decoration-underline"> Signin
-                                                    </a> </p>
+                                                <p class="mb-0">Já tem uma conta ?
+                                                    <a href="auth-signin-basic" class="fw-semibold text-primary text-decoration-underline">
+                                                        Entrar
+                                                    </a>
+                                                </p>
                                             </div>
                                         </div><!-- end card body -->
                                     </div><!-- end card -->

@@ -2,7 +2,7 @@
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <a href="index" class="logo logo-dark">
+        <a href="{{ url('/') }}" class="logo logo-dark">
             <span class="logo-sm">
                 <img src="{{ URL::asset('build/images/logo-sm.png') }}" alt="" height="26">
             </span>
@@ -10,7 +10,7 @@
                 <img src="{{ URL::asset('build/images/logo-dark.png') }}" alt="" height="26">
             </span>
         </a>
-        <a href="index" class="logo logo-light">
+        <a href="{{ url('/') }}" class="logo logo-light">
             <span class="logo-sm">
                 <img src="{{ URL::asset('build/images/logo-sm.png') }}" alt="" height="26">
             </span>
@@ -29,10 +29,10 @@
             <div id="two-column-menu">
             </div>
             <ul class="navbar-nav" id="navbar-nav">
-            
+
                 <li class="menu-title"><span data-key="t-menu">@lang('translation.menu')</span></li>
                 <li class="nav-item">
-                    <a href="index" class="nav-link menu-link"> <i class="bi bi-speedometer2"></i> <span data-key="t-dashboard">@lang('translation.dashboards')</span> </a>
+                    <a href="{{ url('/') }}" class="nav-link menu-link"> <i class="bi bi-speedometer2"></i> <span data-key="t-dashboard">@lang('translation.dashboards')</span> </a>
                 </li>
 
                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">@lang('translation.pages')</span></li>
@@ -211,82 +211,6 @@
                         </ul>
                     </div>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
-                        <i class="bi bi-journal-medical"></i> <span data-key="t-pages">@lang('translation.pages')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarPages">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="pages-starter" class="nav-link" data-key="t-starter"> @lang('translation.starter') </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-maintenance" class="nav-link" data-key="t-maintenance"> @lang('translation.maintenance') 
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-coming-soon" class="nav-link" data-key="t-coming-soon"> @lang('translation.coming-soon') 
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                
-                <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-layouts">@lang('translation.layouts')</span></li>
-                <li class="nav-item">
-                    <a href="layouts-horizontal" class="nav-link menu-link" target="_blank"> <i class="bi bi-window"></i> <span data-key="t-horizontal">@lang('translation.horizontal')</span> </a>
-                </li>
-                <li class="nav-item">
-                    <a href="layouts-detached" class="nav-link menu-link" target="_blank"> <i class="bi bi-layout-sidebar-inset"></i> <span data-key="t-detached">@lang('translation.detached')</span> </a>
-                </li>
-                <li class="nav-item">
-                    <a href="layouts-two-column" class="nav-link menu-link" target="_blank"> <i class="bi bi-layout-three-columns"></i> <span data-key="t-two-column">@lang('translation.two-column')</span> </a>
-                </li>
-                <li class="nav-item">
-                    <a href="layouts-vertical-hovered" class="nav-link menu-link" target="_blank"> <i class="bi bi-layout-text-sidebar-reverse"></i> <span data-key="t-hovered">@lang('translation.hovered')</span> </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
-                        <i class="bi bi-share"></i> <span data-key="t-multi-level">@lang('translation.multi-level')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarMultilevel">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-key="t-level-1.1"> @lang('translation.level-1.1')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAccount" data-key="t-level-1.2"> @lang('translation.level-1.2')
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarAccount">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link" data-key="t-level-2.1"> @lang('translation.level-2.1') </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarCrm" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrm" data-key="t-level-2.2"> @lang('translation.level-2.2')
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarCrm">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link" data-key="t-level-3.1"> @lang('translation.level-3.1')
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link" data-key="t-level-3.2"> @lang('translation.level-3.2')
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
             </ul>
         </div>
         <!-- Sidebar -->
