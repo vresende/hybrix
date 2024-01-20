@@ -43,7 +43,6 @@
     @include('layouts.vendor-scripts')
     @livewireScripts
 
-    <script>console.log('teste')</script>
     @include('sweetalert::alert')
 </body>
 
