@@ -6,10 +6,13 @@
     <title> @yield('title') | {{ config('site.name') }} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="{{ config('site.description') }}" name="description" />
-    <meta content="Vinicius Resende" name="author" />
+    <meta content="{{ config('site.author') }}" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('build/images/favicon.ico') }}">
     @include('layouts.head-css')
+    @vite('resources/js/layout.js')
+
+    @vite(['resources/scss/bootstrap.scss', 'resources/scss/icons.scss', 'resources/scss/app.scss', 'resources/scss/custom.scss'])
     @livewireStyles
 </head>
 <body>
@@ -36,11 +39,14 @@
         <!-- end main content-->
     </div>
     <!-- END layout-wrapper -->
-    @include('sweetalert::alert')
+
     @include('layouts.customizer')
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
     @livewireScripts
+
+    <script>console.log('teste')</script>
+    @include('sweetalert::alert')
 </body>
 
 </html>

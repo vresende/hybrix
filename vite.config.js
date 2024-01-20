@@ -5,7 +5,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 export default vite.defineConfig({
     build: {
         manifest: true,
-        rtl: true,
+        rtl: false,
         outDir: 'public/build/',
         cssCodeSplit: true,
         // buildDirectory: 'assets',
@@ -30,6 +30,12 @@ export default vite.defineConfig({
                     'resources/scss/icons.scss',
                     'resources/scss/app.scss',
                     'resources/scss/custom.scss',
+                    'resources/scss/commom.scss',
+                    'resources/js/commom.js',
+                    'resources/js/app.js',
+                    'resources/js/layout.js',
+                    'resources/js/plugins.js',
+
                 ],
                 refresh: true
             }
@@ -45,8 +51,8 @@ export default vite.defineConfig({
                     dest: ''
                 },
                 {
-                    src: 'resources/js',
-                    dest: ''
+                    src: 'resources/js/pages',
+                    dest: './js'
                 },
                 {
                     src: 'resources/json',
@@ -58,6 +64,6 @@ export default vite.defineConfig({
                 },
             ]
         }),
-        
-    ],
+
+    ]
 });

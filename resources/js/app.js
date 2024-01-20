@@ -7,6 +7,8 @@ Contact: Themesbrand@gmail.com
 File: Main Js File
 */
 
+
+
 (function () {
 	("use strict");
 
@@ -31,31 +33,31 @@ File: Main Js File
 
 	function setLanguage(lang) {
 		if (document.getElementById("header-lang-img")) {
-			if (lang === "en") {
+			if (lang == "en") {
 				document.getElementById("header-lang-img").src = "build/images/flags/us.svg";
 				document.getElementById("lang-name").innerHTML = "English"
-			}  else if (lang === "pt_BR") {
+			}  else if (lang == "pt_BR") {
                 document.getElementById("header-lang-img").src = "build/images/flags/br.svg";
                 document.getElementById("lang-name").innerHTML = "Português"
-            } else if (lang === "sp") {
+            } else if (lang == "sp") {
                 document.getElementById("header-lang-img").src = "build/images/flags/spain.svg";
                 document.getElementById("lang-name").innerHTML = "Española"
-            } else if (lang === "gr") {
+            } else if (lang == "gr") {
 				document.getElementById("header-lang-img").src = "build/images/flags/germany.svg";
 				document.getElementById("lang-name").innerHTML = "Deutsche"
-			} else if (lang === "it") {
+			} else if (lang == "it") {
 				document.getElementById("header-lang-img").src = "build/images/flags/italy.svg";
 				document.getElementById("lang-name").innerHTML = "Italiana"
-			} else if (lang === "ru") {
+			} else if (lang == "ru") {
 				document.getElementById("header-lang-img").src = "build/images/flags/russia.svg";
 				document.getElementById("lang-name").innerHTML = "русский"
-			} else if (lang === "ch") {
+			} else if (lang == "ch") {
 				document.getElementById("header-lang-img").src = "build/images/flags/china.svg";
 				document.getElementById("lang-name").innerHTML = "中国人"
-			} else if (lang === "fr") {
+			} else if (lang == "fr") {
 				document.getElementById("header-lang-img").src = "build/images/flags/french.svg";
 				document.getElementById("lang-name").innerHTML = "français"
-			} else if (lang === "ar") {
+			} else if (lang == "ar") {
 				document.getElementById("header-lang-img").src = "build/images/flags/ae.svg";
 				document.getElementById("lang-name").innerHTML = "عربى"
 			}
@@ -92,57 +94,6 @@ File: Main Js File
 		/**
 		 * Common plugins
 		 */
-		/**
-		 * Toast UI Notification
-		 */
-		var toastExamples = document.querySelectorAll("[data-toast]");
-		Array.from(toastExamples).forEach(function (element) {
-			element.addEventListener("click", function () {
-				var toastData = {};
-				var isToastVal = element.attributes;
-				if (isToastVal["data-toast-text"]) {
-					toastData.text = isToastVal["data-toast-text"].value.toString();
-				}
-				if (isToastVal["data-toast-gravity"]) {
-					toastData.gravity = isToastVal["data-toast-gravity"].value.toString();
-				}
-				if (isToastVal["data-toast-position"]) {
-					toastData.position = isToastVal["data-toast-position"].value.toString();
-				}
-				if (isToastVal["data-toast-className"]) {
-					toastData.className = isToastVal["data-toast-className"].value.toString();
-				}
-				if (isToastVal["data-toast-duration"]) {
-					toastData.duration = isToastVal["data-toast-duration"].value.toString();
-				}
-				if (isToastVal["data-toast-close"]) {
-					toastData.close = isToastVal["data-toast-close"].value.toString();
-				}
-				if (isToastVal["data-toast-style"]) {
-					toastData.style = isToastVal["data-toast-style"].value.toString();
-				}
-				if (isToastVal["data-toast-offset"]) {
-					toastData.offset = isToastVal["data-toast-offset"];
-				}
-				Toastify({
-					newWindow: true,
-					text: toastData.text,
-					gravity: toastData.gravity,
-					position: toastData.position,
-					className: "bg-" + toastData.className,
-					stopOnFocus: true,
-					offset: {
-						x: toastData.offset ? 50 : 0, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-						y: toastData.offset ? 10 : 0, // vertical axis - can be a number or a string indicating unity. eg: '2em'
-					},
-					duration: toastData.duration,
-					close: toastData.close === "close" ? true : false,
-					style: toastData.style === "style" ? {
-						background: "linear-gradient(to right, #0AB39C, #405189)"
-					} : "",
-				}).showToast();
-			});
-		});
 
 		/**
 		 * Choices Select plugin
